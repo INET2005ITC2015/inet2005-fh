@@ -6,5 +6,5 @@
  * Time: 7:18 PM
  */
 
-$x= "Hello, World";
+$x= "Hello, World from PHP";
 echo "<h1>$x</h1>";
