@@ -16,7 +16,8 @@ echo "<h1>  Greetings From Lab1 </h1>";
 
 echo "<h3>  The Ongoing Nature Of Lab1 </h3>";
 ?>
-</br>
+<br>
+
 <?php
 
 // this is the basic set up of declaring a value and outputting it
@@ -30,7 +31,8 @@ echo $firstName;
 $concatExample = "this" . "is" . "concatenation";
 echo $concatExample;
 ?>
-</br>
+<br>
+
 <?php
 //this is an example of math functions
 echo (32*14) + 83;
@@ -39,21 +41,53 @@ echo (1024/128) - 7;
 echo "\r\n";
 echo 769%6;
 ?>
-</br>
+<br>
 
 <?php
-//loop to countdown
-$counter = 10;
+////loop to countdown
+//$counter = 10;
+//
+//if ($counter >=0)
+//    echo "$counter" . "...";
+//    $counter - 1;
+//else {
+//    echo "Blast Off";
+//}
+//
+//
+//?>
 
-while ($counter != 0) {
-    echo "$counter </br>";
-    $counter -1;
+<?php
+//this is an example of loop
+for ($counter = 10; $counter >=0; $counter--)
+{
+    if ($counter == 0)
+        echo "Blast Off";
+    else
+        echo $counter . "...";
 }
+?>
+<br>
 
+
+<?php
+//this is an example of arrays and loop printing
+$colorarray = array("Red", "Black", "Yellow", "Pink", "Green", "Blue", "Orange");
+//put for array here
+
+
+//foreach array
+foreach ($colorarray as $color) {
+    echo "$color";
+    echo "<br>";
+}
+//print r
+print_r ($colorarray);
 ?>
 
 
 
+<br>
 
 
 </body>
