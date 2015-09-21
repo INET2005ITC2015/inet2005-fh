@@ -73,9 +73,13 @@ for ($counter = 10; $counter >=0; $counter--)
 <?php
 //this is an example of arrays and loop printing
 $colorarray = array("Red", "Black", "Yellow", "Pink", "Green", "Blue", "Orange");
+
 //put for array here
-
-
+for ($counter = 0; $counter < count($colorarray); $counter++)
+{
+    echo "$colorarray[$counter]";
+    echo "<br>";
+}
 //foreach array
 foreach ($colorarray as $color) {
     echo "$color";
