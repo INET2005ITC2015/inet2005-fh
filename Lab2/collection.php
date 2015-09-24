@@ -16,6 +16,11 @@
     echo "Your last name is: $lastname" . "<br>";
     echo "Your height in metres is: $metres" . "<br>";
 
+    echo "$fileTmpName". "<br>";
+    echo "$fileOrigNAme". "<br>";
+    echo "$filesize" . "<br>";
+    echo "$fileUploadError" . "<br>";
+
 
 
 
