@@ -16,11 +16,15 @@
     echo "Your last name is: $lastname" . "<br>";
     echo "Your height in metres is: $metres" . "<br>";
 
-    echo "$fileTmpName". "<br>";
-    echo "$fileOrigNAme". "<br>";
-    echo "$filesize" . "<br>";
-    echo "$fileUploadError" . "<br>";
-
+    echo "Tmp: "."$fileTmpName". "<br>";
+    echo "Orig: "."$fileOrigNAme". "<br>";
+    echo "Size: "."$filesize" . "<br>";
+    echo "Error: "."$fileUploadError" . "<br>";
+    if ($fileUploadError == 0) {
+        echo "file uploaded successfully". "<br>";}
+    else{
+        echo "File Failed". "<br>";
+    }
 
 
 
