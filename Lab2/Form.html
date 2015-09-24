@@ -5,11 +5,13 @@
     <title></title>
 </head>
 <body>
-    <form action="collection.php">
-        First Name: <input type = "text" name="First Name"><br><br>
-        Last Name:<input type = "text" name="Last Name"><br><br>
-        Height In Feet:<input type = "text" name="Height In Feet"><br><br>
-        Height In Inches:<input type = "text" name="Height In Inches"><br><br>
+    <form action="collection.php" method="post">
+        First Name:  <input type = "text" name="First"><br><br>
+        Last Name: <input type = "text" name="Last"><br><br>
+        Height In Feet: <input type = "text" name="Feet" required><br><br>
+        Height In Inches: <input type = "text" name="Inches"><br><br>
+        picture: <input type="file" name="userImage" />
+        <!--code for picture was taken from m.Crocker-->
         <input name="submit" type="submit">
     </form>
 </body>
