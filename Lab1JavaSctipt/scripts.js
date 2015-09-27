@@ -19,7 +19,6 @@ function switcher (currentElement){
         div2.style.opacity = .5;
     }
 
-
 }
 
 function accordion (currentElement){
@@ -69,3 +68,7 @@ function accordion (currentElement){
         p4.style.display = "none";
     }
 }
+
+document.getElementById("firstdiv").addEventListener("dblclick", function(){switcher(this)
+});
+document.getElementById("seconddiv").addEventListener("dblclick", function(){switcher(this)});
