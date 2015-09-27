@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+}
+
+div {
+    height: 100px;
+    width: 100px;
+
+}
+
+div, #firstdiv {
+    position: absolute;
+    top: 400px;
+    background-color: blue;
+    z-index:1;
+
+
+}
+
+div, #seconddiv{
+    position: absolute;
+    top: 450px;
+    background-color: green;
+    z-index:0;
+}
+
+header {
+    background-color: green;
+    color: #fff;
+}
+
+#p1, #p2, #p3, #p4  {
+    display: none;
+
+}
+
+img {
+    position:absolute;
+    top: 200px;
+
+}
