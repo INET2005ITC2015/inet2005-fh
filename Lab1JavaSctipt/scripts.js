@@ -2,24 +2,24 @@
  * Created by inet2005 on 9/27/15.
  */
 "use strict";
-function switcher (currentElement){
-    var div1 = document.getElementById("firstdiv");
-    var div2 = document.getElementById("seconddiv");
-
-    if (currentElement === div1){
-        div1.style.zIndex = 0;
-        div2.style.zIndex = 1;
-        div1.style.opacity = .5;
-        div2.style.opacity = 1;
-    }
-    else {
-        div1.style.zIndex = 1;
-        div2.style.zIndex = 0;
-        div1.style.opacity = 1;
-        div2.style.opacity = .5;
-    }
-
-}
+//function switcher (currentElement){
+//    var div1 = document.getElementById("firstdiv");
+//    var div2 = document.getElementById("seconddiv");
+//
+//    if (currentElement === div1){
+//        div1.style.zIndex = 0;
+//        div2.style.zIndex = 1;
+//        div1.style.opacity = .5;
+//        div2.style.opacity = 1;
+//    }
+//    else {
+//        div1.style.zIndex = 1;
+//        div2.style.zIndex = 0;
+//        div1.style.opacity = 1;
+//        div2.style.opacity = .5;
+//    }
+//
+//}
 
 function accordion (currentElement){
     var header1 = document.getElementById("header1");
@@ -70,9 +70,40 @@ function accordion (currentElement){
     }
 }
 
-document.getElementById("firstdiv").addEventListener("dblclick", function(){switcher(this)
+document.getElementById("firstdiv").addEventListener("dblclick", function(currentElement){
+    var div1 = document.getElementById("firstdiv");
+    var div2 = document.getElementById("seconddiv");
+
+    if (currentElement === div1){
+        div1.style.zIndex = 0;
+        div2.style.zIndex = 1;
+        div1.style.opacity = .5;
+        div2.style.opacity = 1;
+    }
+    else {
+        div1.style.zIndex = 1;
+        div2.style.zIndex = 0;
+        div1.style.opacity = 1;
+        div2.style.opacity = .5;
+    }
 });
-document.getElementById("seconddiv").addEventListener("dblclick", function(){switcher(this)});
+document.getElementById("seconddiv").addEventListener("dblclick", function(currentElement){
+    var div1 = document.getElementById("firstdiv");
+    var div2 = document.getElementById("seconddiv");
+
+    if (currentElement !== div1){
+        div1.style.zIndex = 0;
+        div2.style.zIndex = 1;
+        div1.style.opacity = .5;
+        div2.style.opacity = 1;
+    }
+    else {
+        div1.style.zIndex = 1;
+        div2.style.zIndex = 0;
+        div1.style.opacity = 1;
+        div2.style.opacity = .5;
+    }
+});
 
 
 document.getElementById("header1").addEventListener("click", function(){accordion(this)});
