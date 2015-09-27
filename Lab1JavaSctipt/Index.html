@@ -6,7 +6,7 @@
 
     <title>Lab 1 Java Script</title>
 </head>
-<body>
+<body onload="imageloader()">
     <header onclick="accordion(this)" id="header1">
         <h1>Menu One</h1>
         <p id="p1">This is filler text, isn't it great</p>
@@ -24,9 +24,20 @@
         <p id="p4">This is filler text, isn't it great</p>
     </header>
 
-    <div><img src="Images/image1.jpg" alt="flower 1"></div>
-    <div><img src="Images/image2.jpg" alt="flower 2"></div>
-    <div><img src="Images/image3.jpg" alt="flower 2"></div>
+    <div id ="slide1" >
+        <img src="Images/image1.jpg" alt="flower 1">
+        <p>this is a flower</p>
+    </div>
+
+    <div id ="slide2" >
+        <img src="Images/image2.jpg" alt="flower 2">
+        <p>this is a another flower</p>
+    </div>
+
+    <div id ="slide3">
+        <img src="Images/image3.jpg" alt="flower 2">
+        <p>this is a third flower</p>
+    </div>
 
 
     <div id="firstdiv">

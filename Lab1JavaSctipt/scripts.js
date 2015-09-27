@@ -30,7 +30,8 @@ function accordion (currentElement){
     var p2 = document.getElementById("p2");
     var p3 = document.getElementById("p3");
     var p4 = document.getElementById("p4");
-
+    //could look to make these all the same so that the start sets all others to the !== equivalent now
+    //then set the else to the switch back, maybe make it a function set so it calls the function.
     if (currentElement === header1){
         header1.style.backgroundColor = "blue";
         p1.style.display = "inline";
@@ -72,3 +73,41 @@ function accordion (currentElement){
 document.getElementById("firstdiv").addEventListener("dblclick", function(){switcher(this)
 });
 document.getElementById("seconddiv").addEventListener("dblclick", function(){switcher(this)});
+
+
+
+var myCounter = 0;
+
+function changeImage(){
+
+    var elementID = document.getElementById("slide1");
+    var style = window.getComputedStyle(elementID);
+    var x1 = style.getPropertyValue("z-index");
+
+    if (x1 == "1") {
+        document.getElementById("slide1").style.zIndex = "2";
+        document.getElementById("slide1").style.visibility = "hidden";
+        document.getElementById("slide2").style.zIndex = "1";
+        document.getElementById("slide2").style.visibility = "hidden";
+        document.getElementById("slide3").style.zIndex = "3";
+        document.getElementById("slide3").style.visibility = "visible";
+    }
+    else if (x1 == "2") {
+        document.getElementById("slide1").style.zIndex = "3";
+        document.getElementById("slide1").style.visibility = "visible";
+        document.getElementById("slide2").style.zIndex = "2";
+        document.getElementById("slide2").style.visibility = "hidden";
+        document.getElementById("slide3").style.zIndex = "1";
+        document.getElementById("slide3").style.visibility = "hidden";
+    }
+    else if (x1 == "3") {
+        document.getElementById("slide1").style.zIndex = "1";
+        document.getElementById("slide1").style.visibility = "hidden";
+        document.getElementById("slide2").style.zIndex = "3";
+        document.getElementById("slide2").style.visibility = "visible";
+        document.getElementById("slide3").style.zIndex = "2";
+        document.getElementById("slide3").style.visibility = "hidden";
+    }
+}
+
+function imageloader(){setInterval(function(){changeImage()}, 1000)}
