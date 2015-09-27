@@ -75,7 +75,17 @@ document.getElementById("firstdiv").addEventListener("dblclick", function(){swit
 document.getElementById("seconddiv").addEventListener("dblclick", function(){switcher(this)});
 
 
+document.getElementById("header1").addEventListener("click", function(){accordion(this)});
+document.getElementById("header2").addEventListener("click", function(){accordion(this)});
+document.getElementById("header3").addEventListener("click", function(){accordion(this)});
+document.getElementById("header4").addEventListener("click", function(){accordion(this)});
 
+
+//document.getElementsByTagName("body").addEventListener("onload", function(){imageloader()});
+window.addEventListener('DOMContentLoaded',function(){imageloader()});
+
+
+onload="imageloader()"
 var myCounter = 0;
 
 function changeImage(){
