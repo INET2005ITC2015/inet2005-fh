@@ -2,18 +2,18 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="styles.js"></script>
     <title></title>
 </head>
 <body>
-<form>
-    <label>First Name <input type="text" name="firstName" id="fName"></label></br></br>
-    <label>Last Name <input type="text" name="lastName" id="lName"></label></br></br>
-    <label>Address 1 <input type="text" name="addressOne" id="addressOne"></label></br></br>
-    <label>Address 2 <input type="text" name="addressTwo" id="addressTwo"></label></br></br>
-    <label>Email <input type="text" name="email" id="email"></label></br></br>
-    <label>I accept the terms and conditions</label><input type="checkbox" name="terms" id="acceptterms"> <br></br>
-    <input type="submit" value="Update"></br></br>
+<form id="myform" name="myform" onsubmit="return checkTerms()">
+    <label>First Name <input type="text" name="firstName" id="fName" class="field"></label></br></br>
+    <label>Last Name <input type="text" name="lastName" id="lName" class="field"></label></br></br>
+    <label>Address 1 <input type="text" name="addressOne" id="addressOne" class="field"></label></br></br>
+    <label>Address 2 <input type="text" name="addressTwo" id="addressTwo" class="field"></label></br></br>
+    <label>Email <input type="text" name="email" id="email" class="field"></label></br></br>
+    <label>I accept the terms and conditions</label><input type="checkbox" name="terms" id="acceptterms"> <p style ="visibility: hidden" id="accept">You Must Accept Terms!</p> <br></br>
+    <input type="submit" value="submit" id="Sub"></br></br>
     </form>
+<script src="styles.js"></script>
 </body>
 </html>

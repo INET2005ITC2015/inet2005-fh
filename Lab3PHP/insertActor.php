@@ -43,7 +43,7 @@
         echo "<tr>";
         echo "<td>" . $row['actor_id'] . "</td>";
         echo "<td>" . $row['first_name'] . "</td>";
-        echo "<td>" . $row['first_name'] . "</td>";
+        echo "<td>" . $row['last_name'] . "</td>";
         echo "</tr>";
 
     }
@@ -63,8 +63,6 @@
 </br>
 <form action="updateActor.php" method="post">
     ID To Update <input type="text" name="IdUpdate">
-    First Name <input type="text" name="firstName">
-    Last Name <input type="text" name="lastName">
     <input type="submit" value="Update">
 </form>
 </body>
