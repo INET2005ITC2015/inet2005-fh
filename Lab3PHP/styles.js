@@ -15,38 +15,46 @@ function changeColorBack(currentElement) {
 
 
 function checkTerms(currentElement) {
+    var checker = true;
     if (!document.getElementById("acceptterms").checked) {
         document.getElementById("accept").style.visibility = "visible";
         document.getElementById("accept").style.color = "red";
+        checker = false;
     } else {
         document.getElementById("accept").style.visibility = "hidden";
     }
 
     if (document.forms["myform"].fName.value.length == 0) {
         document.getElementById("fName").style.borderColor = "red";
+        checker = false;
     } else if (document.forms["myform"].fName.value.length != 0) {
         document.getElementById("fName").style.border = "";
     }
     if (document.forms["myform"].lName.value.length == 0) {
         document.getElementById("lName").style.borderColor = "red";
+        checker = false;
     } else if (document.forms["myform"].lName.value.length != 0) {
         document.getElementById("lName").style.border = "";
     }
     if (document.forms["myform"].addressOne.value.length == 0) {
         document.getElementById("addressOne").style.borderColor = "red";
+        checker = false;
     } else if (document.forms["myform"].addressOne.value.length != 0) {
         document.getElementById("addressOne").style.border = "";
     }
     if (document.forms["myform"].addressTwo.value.length == 0) {
         document.getElementById("addressTwo").style.borderColor = "red";
+        checker = false;
     } else if (document.forms["myform"].addressTwo.value.length != 0) {
         document.getElementById("addressTwo").style.border = "";
     }
     if (document.forms["myform"].email.value.length == 0) {
         document.getElementById("email").style.borderColor = "red";
+        checker = false;
     } else if (document.forms["myform"].email.value.length != 0) {
         document.getElementById("email").style.border = "";
     }
+    return checker;
 }
 
 //    }
@@ -80,11 +88,18 @@ document.getElementById("email").addEventListener("blur", function () {
 document.getElementById("email").addEventListener("focus", function () {
     changeColor(this)
 });
+
+
 //document.getElementById("Sub").addEventListener("onClick", function () {
 //    checkTerms(this)
 //});
-//document.addEventListener("submit", function () {
-//    checkTerms(this)
-//});
+document.getElementById("myform").addEventListener("submit", function (event) {
+    if (checkTerms(this)) {
+        return true;
+    } else {
+        event.preventDefault();
+    }
+
+});
 
 
