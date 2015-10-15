@@ -26,11 +26,29 @@
     </thead>
     <tbody>
     <?php
-    if (isset($_POST['searchTerm'])) {
-        $search = $_POST ['searchTerm'];
+//    if (isset($_POST['searchTerm'])) {
+//        $search = $_POST ['searchTerm'];
         require_once('dbConn.php');
         $db = getDBConnection();
-        $result = mysqli_query($db, "SELECT * FROM employees LIMIT 0,25");
+
+        if (!isset($_GET['page'])) {
+            $page = 0;
+        } else {
+            $page = $_GET['page'];
+        }
+
+        $prev = 0;
+        $next = 0;
+
+        if ($page - 25 >= 0) {
+            $prev = $page - 25;
+            $next = $page + 25;
+        } else {
+            $prev = 0;
+            $next = 25;
+        }
+
+        $result = mysqli_query($db, "SELECT * FROM employees LIMIT $page, 25");
 
         if (!$result) {
             die('Could not retrieve records from the Database: ' . mysqli_error($db));
@@ -48,17 +66,23 @@
             echo "</tr>";
 
         }
-    }
-    ?>
+
+
+       ?>
 
     </tbody>
 </table>
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" name="searcher">
-    Search: <input type="text" name="searchTerm" value ="">
+    <label>Search: </label><input type="text" name="searchTerm" value ="">
     <input type="submit" value="Submit">
 </form>
 </br>
+<a href="MainPage.php?page=<?= $prev ?>">Prev</a>
+
+<a href="MainPage.php?page=<?= $next ?>">Next</a>
+</br>
+
 </body>
 </html>
 
