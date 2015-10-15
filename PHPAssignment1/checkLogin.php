@@ -5,17 +5,17 @@
     $db = getDBConnection();
 
     $loginUser = $_POST['loginUser'];
-    $loginPass=$_POST['loginPass'];
+    $loginPass= $_POST['loginPass'];
 
     $loginUser = stripcslashes($loginUser);
     $loginPass = stripcslashes($loginPass);
     $loginUser = mysqli_real_escape_string($db, $loginUser);
     $loginPass = mysqli_real_escape_string($db, $loginPass);
 
-    $sqlStatement ="SELECT * FROM WebUser WHERE user_name='$loginUser' and user_pass='$loginPass'";
+    $sqlStatement ="SELECT * FROM WebUsers WHERE user_name='$loginUser' and user_pass='$loginPass'";
 
-    $result = mysqli_query($db,$sqlStatement );
-    $count=mysqli_num_rows($result);
+    $result = mysqli_query($db,$sqlStatement);
+    $count= mysqli_num_rows($result);
 
 if($count==1)
 {
