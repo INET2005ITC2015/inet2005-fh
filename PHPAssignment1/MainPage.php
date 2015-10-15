@@ -71,6 +71,11 @@
                 echo "<td>" . $row['last_name'] . "</td>";
                 echo "<td>" . $row['gender'] . "</td>";
                 echo "<td>" . $row['hire_date'] . "</td>";
+                echo "<td><form action='update.php' method='post'>
+                            <input type='image' src='img/edit32.png' name='Update' value=" . $row['emp_no'] . "></form>";
+                echo "<td><form action='delete.php' method='post'>
+                            <input type='image' src='img/delete32.png' name='Delete' value=" . $row['emp_no'] . "></form>";
+                echo "</tr>";
                 echo "</tr>";
             }
         }
@@ -92,6 +97,11 @@
             echo "<td>" . $row['last_name'] . "</td>";
             echo "<td>" . $row['gender'] . "</td>";
             echo "<td>" . $row['hire_date'] . "</td>";
+            echo "<td><form action='update.php' method='post'>
+            <input type='image' src='img/edit32.png' name='Update' value=" . $row['emp_no'] . "></form>";
+            echo "<td><form action='delete.php' method='post'>
+            <input type='image' src='img/delete32.png' name='Delete' value=" . $row['emp_no'] . "></form>";
+            echo "</tr>";
             echo "</tr>";
         }
     }
