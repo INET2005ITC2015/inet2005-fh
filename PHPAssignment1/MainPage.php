@@ -89,7 +89,7 @@ checkIfLoggedIn();
     //other block of table code, see below.
     if (isset($_GET['searchTerm'])) {
             $searchTerm = $_GET['searchTerm'];
-            $sql = "SELECT * FROM employees WHERE first_name LIKE '%$searchTerm%'  " . $sort . " ASC LIMIT $page, 25";
+            $sql = "SELECT * FROM employees WHERE first_name OR last_name LIKE '%$searchTerm%'  " . $sort . " ASC LIMIT $page, 25";
             $result = mysqli_query($db, $sql);
 
             if (!$result) {
