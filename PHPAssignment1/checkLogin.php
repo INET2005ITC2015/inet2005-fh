@@ -12,7 +12,7 @@
     $loginUser = mysqli_real_escape_string($db, $loginUser);
     $loginPass = mysqli_real_escape_string($db, $loginPass);
 
-    $sqlStatement ="SELECT * FROM WebUsers WHERE user_name='$loginUser' and user_pass='$loginPass'";
+    $sqlStatement ="SELECT * FROM WebUsers WHERE user_name='$loginUser' and user_pass=PASSWORD('$loginPass')";
 
     $result = mysqli_query($db,$sqlStatement);
     $count= mysqli_num_rows($result);

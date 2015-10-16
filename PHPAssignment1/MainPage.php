@@ -1,6 +1,6 @@
 <?php
-    require 'isLoggedIn.php';
-    checkIfLoggedIn();
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,20 +20,21 @@
 <table>
     <thead>
     <tr>
-        <th><a href="<?=SortBy('emp_no') ?>">Emp. Number</a></th>
-        <th><a href="<?=SortBy('birth_date') ?>">Birth Date</a></th>
-        <th><a href="<?=SortBy('first_name') ?>">First Name</a></th>
-        <th><a href="<?=SortBy('last_name') ?>">Last Name</a></th>
-        <th><a href="<?=SortBy('gender') ?>">Gender</a></th>
-        <th><a href="<?=SortBy('hire_date') ?>">Hire Date</a></th>
+        <th><a href="<?= SortBy('emp_no') ?>">Emp. Number</a></th>
+        <th><a href="<?= SortBy('birth_date') ?>">Birth Date</a></th>
+        <th><a href="<?= SortBy('first_name') ?>">First Name</a></th>
+        <th><a href="<?= SortBy('last_name') ?>">Last Name</a></th>
+        <th><a href="<?= SortBy('gender') ?>">Gender</a></th>
+        <th><a href="<?= SortBy('hire_date') ?>">Hire Date</a></th>
     </tr>
     </thead>
     <tbody>
     <?php
     //sort function that kills souls
-    function SortBy($sort){
+    function SortBy($sort)
+    {
         $url = "MainPage.php";
-        if(isset($_GET['page']) && isset($_GET['searchTerm'])) {
+        if (isset($_GET['page']) && isset($_GET['searchTerm'])) {
             $url .= "?page=" . $_GET['page'] . "&searchTerm=" . $_GET['name'] . "&sort=" . $sort;
         } else if (isset($_GET['page'])) {
             $url .= "?page=" . $_GET['page'] . "&sort=" . $sort;
@@ -44,20 +45,22 @@
         }
         return $url;
 
+
     }
+
     //don't move me I open the BD connection
-    $search = $_POST ['searchTerm'];
+    //$search = $_GET ['searchTerm'];
     require_once('dbConn.php');
     $db = getDBConnection();
     //sets the search term that the search field collects, this is here because it is also used by
     //the sticky nature of the form, it keeps the name searched by echoing the variable.
-    $searchTerm = $_GET['searchTerm'];
 
-//this takes thk sort as entered and appends it to order by.
+
+    //this takes thk sort as entered and appends it to order by.
     if (isset($_GET['sort'])) {
-        $sort = " ORDER BY " . $_GET['sort'];
+        $sort = "ORDER BY " . $_GET['sort'];
     } else {
-        $sort = " ORDER BY " . 'emp_no';
+        $sort = "ORDER BY " . 'emp_no';
     }
 
     //this checks to see if the page is set and then if not it sets it to 0
@@ -79,14 +82,15 @@
         $prev = 0;
         $next = 25;
     }
-        //this connects to what is in the shit below and picns what to sort by and how to sort it
-        $direction = 'DESC';
+    //this connects to what is in the shit below and picns what to sort by and how to sort it
+    $direction = 'DESC';
 
     //I am the search feature table with pagination, I work on an if else if there is no search I just jump down and use the pagination and the
     //other block of table code, see below.
     if (isset($_GET['searchTerm'])) {
-
-            $result = mysqli_query($db, "SELECT * FROM employees $sort ASC WHERE first_name LIKE '%$searchTerm%' LIMIT $page, 25");
+            $searchTerm = $_GET['searchTerm'];
+            $sql = "SELECT * FROM employees WHERE first_name LIKE '%$searchTerm%'  " . $sort . " ASC LIMIT $page, 25";
+            $result = mysqli_query($db, $sql);
 
             if (!$result) {
                 die('Could not retrieve records from the Database: ' . mysqli_error($db));
@@ -107,11 +111,10 @@
                             <input type='image' src='img/delete32.png' name='Delete' value=" . $row['emp_no'] . "></form>";
                 echo "</tr>";
                 echo "</tr>";
-            }
         }
-
-    else {
+    } else {
         // if there is no search then the else will run and it will give a pagenated select of data from employees
+
         $result = mysqli_query($db, "SELECT * FROM employees $sort ASC LIMIT $page, 25");
 
         if (!$result) {
@@ -135,21 +138,21 @@
             echo "</tr>";
         }
     }
-       ?>
+    ?>
 
     </tbody>
 </table>
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET" name="searcher">
-    <label>Search: </label><input type="text" name="searchTerm" value ="<?php echo $searchTerm;?>">
+    <label>Search: </label><input type="text" name="searchTerm" value="<?php echo $searchTerm; ?>">
     <input type="submit" value="Submit">
 </form>
 </br>
 <a href="MainPage.php?page=<?= $prev ?>&searchTerm=<?= $searchTerm ?>">Prev</a>
 
 <a href="MainPage.php?page=<?= $next ?>&searchTerm=<?= $searchTerm ?>">Next</a>
-<a href ="updateRecords.html">Update Records</a>
-<a href ="logOut.php">Logout</a>
+<a href="updateRecords.html">Update Records</a>
+<a href="logOut.php">Logout</a>
 </br>
 
 </body>
