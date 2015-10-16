@@ -1,4 +1,6 @@
 <?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 require_once('dbConn.php');
 $db = getDBConnection();
 //retrieve last number in db then add 1 to it.
@@ -30,6 +32,8 @@ if (!$result) {
 
 echo "<a href='MainPage.php'>Back</a><br/>";
 echo "<a href='updateRecords.html'>Insert another</a>";
+?>
+<a href ="logOut.php">Logout</a>
 
 
 

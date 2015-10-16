@@ -1,3 +1,8 @@
+<?php
+    require 'isLoggedIn.php';
+    checkIfLoggedIn();
+?>
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -119,6 +124,7 @@
 
 <a href="MainPage.php?page=<?= $next ?>&searchTerm=<?= $searchTerm ?>">Next</a>
 <a href ="updateRecords.html">Update Records</a>
+<a href ="logOut.php">Logout</a>
 </br>
 
 </body>

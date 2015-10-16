@@ -1,4 +1,6 @@
 <?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 require_once('dbConn.php');
 $db = getDBConnection();
 ?>
@@ -59,5 +61,6 @@ $db = getDBConnection();
     }
     ?>
     <a href="MainPage.php">Back to Index</a>
+    <a href ="logOut.php">Logout</a>
     </body>
 </html>

@@ -21,7 +21,7 @@ if($count==1)
 {
     $_SESSION['loginUser'] = $loginUser;
     $_SESSION['loginPass'] = $loginPass;
-    header("location:page1.php");
+    header("location:MainPage.php");
 
 }
 else

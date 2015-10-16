@@ -1,6 +1,9 @@
 <?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
 require_once('dbConn.php');
 $db = getDBConnection();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,3 +28,4 @@ echo 'Successfully deleted ' . mysqli_affected_rows($db) . ' record(s)';
 ?>
 
 <a href="MainPage.php">Back to Index</a>
+<a href ="logOut.php">Logout</a>
