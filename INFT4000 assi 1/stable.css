@@ -1,0 +1,42 @@
+/* Collapse borders*/
+.spuzzle , .subTable {
+   border-collapse: collapse;
+
+}
+/*td border*/
+.spuzzle td{
+   border: 5px outset gray;
+}
+/*font size and color*/
+.spuzzle th{
+   font-size: 8px;
+   color: gray;
+}
+/*tbody th height*/
+.spuzzle tbody th{
+   height: 40px;
+}
+/*font size color centres and borders*/
+.subTable td{
+   font-size: 20px;
+   color: blue;
+   height: 40px;
+   width: 40px;
+   text-align: center;
+   border: 1px solid black;
+}
+.subTable .edit{
+   color: green;
+}
+/*Gold box*/
+.goldBox td{
+   background-image: url("gold.jpg");
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+}
+/*green box*/
+.greenBox td{
+   background-image: url("green.jpg");
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+}
