@@ -7,12 +7,14 @@ function reset() {
 }}
 
 
-function complete(){
+function complete(element){
     var celllist = document.getElementsByClassName("edit");
     for (var i = 0; i < celllist.length; i++) {
-        if(celllist[i].style.color != "red") {
+        if(element.style.color = "green") {
             if (celllist[i] != "" )
-            {alert("you won")}
+            {
+
+            }
         }
 
         }
@@ -38,10 +40,11 @@ function numcheck(element) {
         alert("Enter only numbers 1-9");
         element.innerHTML = "";
 
+
     }
     else {
 
-
+        element.style.color = "green";
     }
 
 
@@ -57,10 +60,7 @@ for(var i = 0; i<temp.length; i++) {
     if (temp[i].innerHTML == text && temp[i].className != (className)) {
         element.style.color = "red";
     }
-    else
-    {
 
-    }
 }}
 
 function ccheck(element){
@@ -73,11 +73,7 @@ function ccheck(element){
         if (temp[i].innerHTML == text && temp[i].className != (className)) {
             element.style.color = "red";
         }
-        else
-        {
-
-        }
-    }}
+          }}
 
 function bcheck(element){
     var regExR = /b[1-9]/;
@@ -89,11 +85,7 @@ function bcheck(element){
         if (temp[i].innerHTML == text && temp[i].className != (className)) {
             element.style.color = "red";
         }
-        else
-        {
-
-        }
-    }}
+           }}
 
 function filler(){
 //row 1
