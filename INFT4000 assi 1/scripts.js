@@ -1,42 +1,50 @@
 "use strict";
-
+//reset
 function reset() {
     var celllist = document.getElementsByClassName("edit");
     for (var i = 0; i < celllist.length; i++) {
         celllist[i].innerHTML = "";
-}}
+    }
+}
 
-
-function complete(element){
-    var celllist = document.getElementsByClassName("edit");
-    for (var i = 0; i < celllist.length; i++) {
-        if(element.style.color = "green") {
-            if (celllist[i] != "" )
-            {
-
-            }
-        }
-
-        }
-
+function objectyourequired(){
+    this.there = function(){ alert('you have won');}
 
 }
 
-(function() {
+function complete() {
+    var test = true;
+    var celllist = document.getElementsByClassName("edit");
+    for (var i = 0; i < celllist.length; i++) {
+        if (celllist[i].innerHTML === "" || celllist[i].style.color === 'red') {
+            test = false;
+        }
+    }
+    if (test) {
+        var myObject = new objectyourequired();
+        myObject.there();
+    }
+}
+
+
+//this function runs all the checks on the new number
+(function () {
     var celllist = document.getElementsByClassName("edit");
     for (var i = 0; i < celllist.length; i++) {
         celllist[i].addEventListener('keyup', function () {
-            numcheck(this)
-            rcheck(this)
-            ccheck(this)
-            complete()
+            numcheck(this);
+            rcheck(this);
+            ccheck(this);
+            complete();
         })
     }
 })();
 
+//checks to make sure the number is valid and if valid it sets it to green to get around the red from errors.
+//the red will be added if the code errors.
 function numcheck(element) {
     // var num = element.innerHTML;
-    if (!/^[1-9]$/.test(element.innerHTML)){
+    if (!/^[1-9]$/.test(element.innerHTML)) {
         alert("Enter only numbers 1-9");
         element.innerHTML = "";
 
@@ -49,45 +57,52 @@ function numcheck(element) {
 
 
 }
+//walks the number through and takes the correct part of the class name to make sure that the
+//number is not in violation or row
+function rcheck(element) {
+    var regExR = /r[1-9]/;
+    var className = element.className;
+    var rClass = regExR.exec(className);
+    var text = element.innerHTML;
+    var temp = document.getElementsByClassName(rClass[0]);
+    for (var i = 0; i < temp.length; i++) {
+        if (temp[i].innerHTML == text && temp[i].className != (className)) {
+            element.style.color = "red";
+        }
 
-function rcheck(element){
-var regExR = /r[1-9]/;
-var className = element.className;
-var rClass = regExR.exec(className);
-var text= element.innerHTML;
-var temp = document.getElementsByClassName(rClass[0]);
-for(var i = 0; i<temp.length; i++) {
-    if (temp[i].innerHTML == text && temp[i].className != (className)) {
-        element.style.color = "red";
     }
-
-}}
-
-function ccheck(element){
+}
+//walks the number through and takes the correct part of the class name to make sure that the
+//number is not in violation or col
+function ccheck(element) {
     var regExR = /c[1-9]/;
     var className = element.className;
     var cClass = regExR.exec(className);
-    var text= element.innerHTML;
+    var text = element.innerHTML;
     var temp = document.getElementsByClassName(cClass[0]);
-    for(var i = 0; i<temp.length; i++) {
+    for (var i = 0; i < temp.length; i++) {
         if (temp[i].innerHTML == text && temp[i].className != (className)) {
             element.style.color = "red";
         }
-          }}
-
-function bcheck(element){
+    }
+}
+//walks the number through and takes the correct part of the class name to make sure that the
+//number is not in violation or box
+function bcheck(element) {
     var regExR = /b[1-9]/;
     var className = element.className;
     var bClass = regExR.exec(className);
-    var text= element.innerHTML;
+    var text = element.innerHTML;
     var temp = document.getElementsByClassName(bClass[0]);
-    for(var i = 0; i<temp.length; i++) {
+    for (var i = 0; i < temp.length; i++) {
         if (temp[i].innerHTML == text && temp[i].className != (className)) {
             element.style.color = "red";
         }
-           }}
+    }
+}
 
-function filler(){
+//hard coded function for inserting the values to complete the sudoku
+function filler() {
 //row 1
     document.getElementsByClassName("r1 c1")[0].innerHTML = "1";
     document.getElementsByClassName("r1 c2")[0].innerHTML = "2";
