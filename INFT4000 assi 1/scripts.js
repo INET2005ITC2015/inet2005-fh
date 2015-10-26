@@ -11,7 +11,9 @@ function objectyourequired(){
     this.there = function(){ alert('you have won');}
 
 }
-
+//this checks to see if the game is over, it looks at all cells flagged as edit
+//it then looks for the color red and if it finds red it sets and object to false, if
+//the test is true at the end then it runs an object that displays they won.
 function complete() {
     var test = true;
     var celllist = document.getElementsByClassName("edit");
@@ -91,7 +93,7 @@ function ccheck(element) {
 function bcheck(element) {
     var regExR = /b[1-9]/;
     var className = element.className;
-    var bClass = regExR.exec(className);
+    var bClass = regExR.exec(className); //takes only the part of the class name that matches the regex at the start
     var text = element.innerHTML;
     var temp = document.getElementsByClassName(bClass[0]);
     for (var i = 0; i < temp.length; i++) {
