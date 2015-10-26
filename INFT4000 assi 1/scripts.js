@@ -176,6 +176,8 @@ function filler() {
     document.getElementsByClassName("r9 c8")[0].innerHTML = "9";
     document.getElementsByClassName("r9 c9")[0].innerHTML = "4";
 
+    complete();
+
     //dummy data
     //document.getElementsByClassName("r2 c1")[0].innerHTML = "0";
     //document.getElementsByClassName("r2 c2")[0].innerHTML = "0";
