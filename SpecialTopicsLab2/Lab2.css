@@ -31,7 +31,7 @@ form label, input {
     top: 200px;
     left: 200px;
     z-index: 1;
-    visibility: hidden;    
+    visibility: hidden;
     border: 1px solid black;
     padding: 10px;
     background-color: greenyellow;
