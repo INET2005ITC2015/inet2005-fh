@@ -5,13 +5,13 @@ var studentArray = [];
 
 function show() {
     var text =  JSON.stringify(studentArray),
-        myElement = document.getElementById("tooltip");
+        myElement = document.getElementById("popper");
     myElement.innerHTML = text;
     myElement.style.visibility = "visible"
 }
 
 function clear() {
-    document.getElementById("tooltip").style.visibility = "hidden";
+    document.getElementById("popper").style.visibility = "hidden";
 }
 
 function reset() {
@@ -87,6 +87,6 @@ document.getElementById("students").addEventListener("mouseover", function () {
     show();
 });
 
-document.getElementById("tooltip").addEventListener("click", function () {
+document.getElementById("popper").addEventListener("click", function () {
     clear();
 });
