@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Lookup</title>
+        <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="ajaxEmpLookup.js"></script>
+    </head>
+    <body>
+        <h2>Employee Lookup</h2>
+        <form action="" name="searchForm">
+            <p>Search:
+            <input type="text" name="searchExpr" onkeyup="showMatches(this.value)">
+            </p>
+            <br/><br/><br/><br/>
+            <p>Suggestions:<br/>
+            <span id="TxtHint"></span>
+            </p>
+        </form>
+    </body>
+</html>
