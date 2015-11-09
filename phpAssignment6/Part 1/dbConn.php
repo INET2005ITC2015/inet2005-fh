@@ -19,7 +19,7 @@
  function selectEmpWithNameStartingWith($searchString) {
      global $dbConnection;
      global $result;
-     $sqlStatement = "SELECT * FROM employees WHERE first_name LIKE '$searchString%' OR last_name LIKE  '$searchString%'";
+     $sqlStatement = "SELECT * FROM employees WHERE first_name LIKE '$searchString%' OR last_name LIKE  '$searchString%' limit 10";
 //     $sqlStatement .=
 //     $sqlStatement .= "%';
 //     $sqlStatement .= "";
