@@ -8,6 +8,8 @@
        <!--<link rel="stylesheet" type="text/css" href="Lab2.css">-->
        <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
        <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+       <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+       <script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
        <script src="students.json"></script>
        <title>Student App</title>
 </head>
@@ -15,7 +17,7 @@
 <div class="container-fluid" id="studentForm">
     <form role="form" id="NewStudent" ng-submit="addNewStudent()">
         <div class="form-group">
-        <label for="studentID">Student ID:</label><input  class="form-control" id="studentID" type="text" name="studentID" ng-model="id">
+        <label for="studentID">Student ID:</label><input  class="form-control" id="studentID" type="text" name="studentID" ng-model="id" ui-mask="w999999">
         </div>
         <div class="form-group">
         <label for="fName">First Name:</label>  <input  class="form-control" id="fName" type="text" name="fName" ng-model="fName">
