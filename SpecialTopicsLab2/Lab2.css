@@ -36,3 +36,8 @@ form label, input {
     padding: 10px;
     background-color: greenyellow;
 }
+
+.myGrid {
+    width: 500px;
+    height: 250px;
+}

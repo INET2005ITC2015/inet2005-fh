@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="studentApp">
    <head> <meta charset="UTF-8">
+       <script src="bower_components/jquery/dist/jquery.js"></script>
        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-       <script type="text/css" src="bower_components/bootstrap/dist/css/bootstrap.css"></script>
+       <link  rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+       <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+       <!--<link rel="stylesheet" type="text/css" href="Lab2.css">-->
+       <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
+       <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
        <script src="students.json"></script>
        <title>Student App</title>
-    <link rel="stylesheet" type="text/css" href="Lab2.css">
-
 </head>
 <body data-ng-controller="studentController">
-<div id="studentForm">
-    <form id="NewStudent" ng-submit="addNewStudent()">
-
-        <label for="studentID">Student ID:</label><input id="studentID" type="text" name="studentID" ng-model="id"> <br />
-        <label for="fName">First Name:</label>  <input id="fName" type="text" name="fName" ng-model="fName"><br />
-        <label for="lName">Last Name:</label>   <input id="lName" type="text" name="lName" ng-model="lName"><br />
+<div class="container-fluid" id="studentForm">
+    <form role="form" id="NewStudent" ng-submit="addNewStudent()">
+        <div class="form-group">
+        <label for="studentID">Student ID:</label><input  class="form-control" id="studentID" type="text" name="studentID" ng-model="id">
+        </div>
+        <div class="form-group">
+        <label for="fName">First Name:</label>  <input  class="form-control" id="fName" type="text" name="fName" ng-model="fName">
+        </div>
+            <div class="form-group">
+            <label for="lName">Last Name:</label>   <input  class="form-control" id="lName" type="text" name="lName" ng-model="lName">
+            </div>
         <input type="submit" value="submit">
         <p id="errorField"></p>
     </form>
 </div>
-<div id="students">
-    <ul id="displayStudents"  >
-        <li ng-repeat="students in students" ng-mouseover="showPopper()"><span>{{students.id}}</span>
-            <span>{{students.fName}}</span>
-            <span>{{students.lName}}</span></li>
-    </ul>
-</div>
-<div id="popper" ng-show="showIt" ng-click="hidePopper()">
-   <p> {{students}}</p>
-</div>
+    <div id="grid1" ui-grid="{data : students}" ui-grid-edit class="grid"></div>
+<!--<div class="container" id="students">-->
+    <!--<table class="table" id="displayStudents">-->
+        <!--<tr>-->
+            <!--<th>ID</th>-->
+            <!--<th>First Name</th>-->
+            <!--<th>Last Name</th>-->
+        <!--</tr>-->
+        <!--<tr ng-repeat="students in students" ng-mouseover="showPopper()"><td>{{students.id}}</td>-->
+            <!--<td>{{students.fName}}</td>-->
+           <!--<td>{{students.lName}}</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</div>-->
+<!--<div id="popper" ng-show="showIt" ng-click="hidePopper()">-->
+   <!--<p> {{students}}</p>-->
+<!--</div>-->
 
 </body>
 

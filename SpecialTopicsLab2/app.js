@@ -1,4 +1,4 @@
-app=angular.module('studentApp',[])
+app=angular.module('studentApp',['ui.grid'])
 
 app.controller('studentController',['$scope', '$http', function($scope, $http){
 
