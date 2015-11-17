@@ -27,6 +27,7 @@ and open the template in the editor.
             endif;
         ?>
         <h1>Current Actors:</h1>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?insert=true">Insert New Employee </a>
         <table>
             <thead>
                 <tr>
@@ -34,6 +35,7 @@ and open the template in the editor.
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,12 +52,18 @@ and open the template in the editor.
                                     <img src="../public/images/edit_icon.png" height="25px" width="25px"/>
                                 </a>
                             </td>
+                            <td>
+                                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?idDelete=<?php echo $Actor->getID(); ?>">
+                                    <img src="../public/images/delete.png" height="40px" width="40px"/>
+                                </a>
+                            </td>
                         </tr>
                     <?php
                     endforeach;
                 ?>
             </tbody>
             <tfoot></tfoot>
-        </table>  
+        </table>
+    <button></button>
     </body>
 </html>

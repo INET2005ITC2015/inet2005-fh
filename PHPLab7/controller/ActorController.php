@@ -25,6 +25,27 @@ class ActorController
         include '../view/editActor.php';
     }
 
+    public function deleteAction($actorID)
+    {
+        $currentActor = $this->model->getActor($actorID);
+
+        include '../view/deleteActor.php';
+    }
+
+    public function commitDeleteAction($actorID){
+        $lastOperationResults = "";
+
+        $currentActor = $this->model->getActor($actorID);
+
+
+        $lastOperationResults = $this->model->deleteActor($currentActor);
+
+        $arrayOfActors = $this->model->getAllActors();
+
+        include '../view/displayActors.php';
+    }
+
+
     public function commitUpdateAction($actorID, $fName, $lName)
     {
         $lastOperationResults = "";

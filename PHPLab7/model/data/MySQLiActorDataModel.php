@@ -58,8 +58,21 @@ class MySQLiActorDataModel implements iActorDataModel
     {
         $updateStatement = "UPDATE Actor";
         $updateStatement .= " SET first_name = '{$first_name}',last_name='{$last_name}'";
-        $updateStatement .= " WHERE Actor_id = {$actorID};";
+        $updateStatement .= " WHERE actor_id = {$actorID};";
         $this->result = @$this->dbConnection->query($updateStatement);
+        if (!$this->result) {
+            die('Could not update records in the Sakila Database: ' .
+                $this->dbConnection->error);
+        }
+
+        return $this->dbConnection->affected_rows;
+    }
+
+    public function deleteActor($actorID, $first_name, $last_name)
+    {
+        $deleteStatement = "Delete actor";
+        $deleteStatement .= " WHERE actor_id = {$actorID};";
+        $this->result = @$this->dbConnection->query($deleteStatement);
         if (!$this->result) {
             die('Could not update records in the Sakila Database: ' .
                 $this->dbConnection->error);

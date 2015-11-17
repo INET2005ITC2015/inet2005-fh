@@ -14,6 +14,8 @@ interface iActorDataModel
 
     public function updateActor($actorID, $first_name, $last_name);
 
+    public function deleteActor($actorID);
+
     public function fetchActorID($row);
 
     public function fetchActorFirstName($row);

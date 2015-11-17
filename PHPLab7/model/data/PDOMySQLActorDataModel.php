@@ -29,8 +29,8 @@ class PDOMySQLActorDataModel implements iActorDataModel
     public function selectActors()
     {
         // hard-coding for first ten rows
-        $start = 0;
-        $count = 10;
+        $start = 200;
+        $count = 30;
 
         //TODO
         $selectStatement = "SELECT * FROM actor";
@@ -75,9 +75,7 @@ class PDOMySQLActorDataModel implements iActorDataModel
 
     public function updateActor($actorID, $first_name, $last_name)
     {
-        $updateStatement = "UPDATE Actor";
-        $updateStatement .= " SET first_name = :firstName,last_name=:lastName";
-        $updateStatement .= " WHERE Actor_id = :actorID;";
+        $updateStatement = "UPDATE actor SET first_name = :firstName,last_name=:lastName WHERE actor_id = :actorID;";
 
         try {
             $this->stmt = $this->dbConnection->prepare($updateStatement);
@@ -91,6 +89,20 @@ class PDOMySQLActorDataModel implements iActorDataModel
         } catch (PDOException $ex) {
             die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
         }
+    }
+
+    public function deleteActor($actorID){
+        $deleteStatement = "DELETE actor from actor WHERE actor_id = :actorID;";
+        try {
+            $this->stmt = $this->dbConnection->prepare($deleteStatement);
+            $this->stmt->bindParam(':actorID', $actorID, PDO::PARAM_INT);
+
+            $this->stmt->execute();
+        }
+        catch (PDOException $ex) {
+            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
+        }
+
     }
 
     public function fetchActorID($row)
