@@ -8,7 +8,7 @@ class Article extends Model {
 	protected $fillable= [
         'title',
         'body',
-        'published_at'
+        'published_at',
     ];
 
     protected $dates = ['published_at'];
@@ -27,4 +27,10 @@ class Article extends Model {
     public function setPublishedAtAttribute($date){
         $this->attributes['published_at'] = Carbon::parse($date);
     }
+
+    public function user() {
+        return $this->belongsTo('App\User');
+
+    }
+
 }
