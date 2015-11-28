@@ -14,19 +14,19 @@
 Route::get('/', 'WelcomeController@index');
 
 
-Route::get('articles', 'ArticlesController@index');
+//Route::get('articles', 'ArticlesController@index');
+//
+//Route::get('articles/create', 'ArticlesController@create');
+//
+//Route::get('articles/{id}', 'ArticlesController@show');
+//
+//Route::post('articles', 'ArticlesController@store');
+//
+//Route::get('articles/{id}/edit', 'ArticlesController@edit');
 
-Route::get('articles/create', 'ArticlesController@create');
+Route:resource('articles', 'ArticlesController');
 
-Route::get('articles/{id}', 'ArticlesController@show');
-
-Route::post('articles', 'ArticlesController@store');
-
-
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+//Route::controllers([
+//	'auth' => 'Auth\AuthController',
+//	'password' => 'Auth\PasswordController',
+//]);

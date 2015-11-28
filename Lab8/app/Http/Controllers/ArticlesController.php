@@ -1,12 +1,9 @@
 <?php namespace App\Http\Controllers;
 use App\Article;
 use App\Http\Requests;
-use App\Http\Requests\CreateArticleRequest;
-use Illuminate\HttpResonse;
+use App\Http\Requests\ArticleRequest;
 use App\Http\Controllers\Controller;
-
-
-
+use Illuminate\Http\Request;
 
 
 class ArticlesController extends Controller {
@@ -24,12 +21,25 @@ class ArticlesController extends Controller {
     public function create(){
         return view('articles.create');
     }
-    public function store(CreateArticleRequest $request){
+    public function store(ArticleRequest $request){
 
         Article::create($request->all());
         return redirect('articles');
 
 
     }
+
+    public function edit($id){
+
+             $article = Article::findorFail($id);
+            return view('articles.edit', compact('article'));
+    }
+public function update($id, ArticleRequest $request)
+{
+    $article = Article::findorFail($id);
+    $article->update($request->all());
+
+    return redirect('articles');
+}
 
 }
