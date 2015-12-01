@@ -30,9 +30,12 @@ class ArticlesController extends Controller {
     }
     public function store(ArticleRequest $request){
 
+
         $article = new Article($request->all());
 
         \Auth::user()->articles()->save($article);
+        flash()->success('Your Article Has Been Created');
+
         return redirect('articles');
 
     }
@@ -40,6 +43,7 @@ class ArticlesController extends Controller {
     public function edit(Article $article){
             return view('articles.edit', compact('article'));
     }
+
 public function update(Article $article, ArticleRequest $request)
 {
     $article->update($request->all());
