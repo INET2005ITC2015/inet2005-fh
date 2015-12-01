@@ -24,9 +24,18 @@
 //
 //Route::get('articles/{id}/edit', 'ArticlesController@edit');
 
-Route:resource('articles', 'ArticlesController');
 
-//Route::controllers([
-//	'auth' => 'Auth\AuthController',
-//	'password' => 'Auth\PasswordController',
-//]);
+//use Illuminate\Support\Facades\Route;
+
+//use Symfony\Component\Routing\Route;
+
+//use Symfony\Component\Routing\Annotation\Route;
+
+//use Illuminate\Routing\Route;
+
+Route::resource('articles', 'ArticlesController');
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);

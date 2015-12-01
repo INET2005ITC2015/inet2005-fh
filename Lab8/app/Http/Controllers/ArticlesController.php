@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
+
 class ArticlesController extends Controller {
 
     public function index(){
+
+
         $articles = Article::latest('published_at')->published() -> get();
 
         return view('articles.index', compact('articles'));
@@ -23,11 +26,10 @@ class ArticlesController extends Controller {
     }
     public function store(ArticleRequest $request){
 
-        Article::create($request->all());
+        $article = new Article($request->all());
+
+        \Auth::user()->articles()->save($article);
         return redirect('articles');
-
-
-
 
     }
 
