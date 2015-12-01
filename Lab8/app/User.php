@@ -36,4 +36,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     }
 
+    public function isATeamManager()
+    {
+            return false;
+    }
+
 }

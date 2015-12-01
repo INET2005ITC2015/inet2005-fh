@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller {
 
+    public function _construct(){
+        $this->middleware('auth', ['except'=> 'index']);
+
+    }
+
     public function index(){
 
 
@@ -16,8 +21,7 @@ class ArticlesController extends Controller {
 
         return view('articles.index', compact('articles'));
     }
-    public function show($id){
-        $article = Article::findorFail($id);
+    public function show(Article $article){
 
          return view('articles.show', compact('article'));
     }
@@ -33,14 +37,11 @@ class ArticlesController extends Controller {
 
     }
 
-    public function edit($id){
-
-             $article = Article::findorFail($id);
+    public function edit(Article $article){
             return view('articles.edit', compact('article'));
     }
-public function update($id, ArticleRequest $request)
+public function update(Article $article, ArticleRequest $request)
 {
-    $article = Article::findorFail($id);
     $article->update($request->all());
 
     return redirect('articles');
