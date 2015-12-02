@@ -26,9 +26,26 @@
 
 </div>
 
+<!--form input -->
+<div class="form-group"
+        {!! Form::label('tag_list', 'Tags:') !!}
+        {!! Form::select('tag_list[]', $tags, null, ['id'=>'tag_list', 'class' => 'form-control', 'multiple']) !!}
+</div>
+
 <!-- Add Article form input -->
 <div class="form-group">
 
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 
 </div>
+
+@section ('footer')
+    <script>
+        $('#tag_list').select2({
+            placeholder: 'Choose A Tag!',
+            tags: true
+
+        });
+
+    </script>
+    @endsection

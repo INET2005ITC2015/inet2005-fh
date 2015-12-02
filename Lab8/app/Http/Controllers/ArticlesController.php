@@ -3,8 +3,10 @@ use App\Article;
 use App\Http\Requests;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Controllers\Controller;
+use App\Tag;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Auth;
+use App\UserModel;
 
 
 class ArticlesController extends Controller {
@@ -26,29 +28,51 @@ class ArticlesController extends Controller {
          return view('articles.show', compact('article'));
     }
     public function create(){
-        return view('articles.create');
+        $tags = Tag::lists('name','id');
+        return view('articles.create', compact('tags'));
     }
     public function store(ArticleRequest $request){
 
 
-        $article = new Article($request->all());
+//         new Article($request->all());
+        $this->createArticle($request);
 
-        \Auth::user()->articles()->save($article);
-        flash()->success('Your Article Has Been Created');
 
-        return redirect('articles');
+
+        flash('Your Article Has Been Created');
+
+        return redirect('articles')->with('flash_message');
 
     }
 
     public function edit(Article $article){
-            return view('articles.edit', compact('article'));
+        $tags=Tag::lists('name', 'id');
+
+            return view('articles.edit', compact('article','tags'));
     }
 
 public function update(Article $article, ArticleRequest $request)
 {
     $article->update($request->all());
+    $this->syncTags($article, $request->input('tag_list'));
 
     return redirect('articles');
 }
+
+    /**
+     * @param Article $article
+     * @param ArticleRequest $request
+     */
+    private function syncTags(Article $article, array $tags)
+    {
+        $article->tags()->sync($tags);
+    }
+
+    private function createArticle(ArticleRequest $request)
+    {
+        $article = \Auth::user()->articles()->create($request->all());
+        $this->syncTags($article, $request->input('tag_list'));
+        return $article;
+    }
 
 }
