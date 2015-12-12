@@ -26,9 +26,9 @@ router.route('/restaurants')
 
 
 // ----------------------------------------------------
-router.route('/restaurants/_id')
+router.route('/restaurants/:_id')
 
-.get(restaurantController.show)
+    .get(restaurantController.show)
 // update the Restaurant with this id (accessed at PUT http://localhost:8080/api/Restaurants/:Restaurant_id)
     .put(restaurantController.update)
 // delete the Restaurant with this id (accessed at DELETE http://localhost:8080/api/Restaurants/:Restaurant_id)

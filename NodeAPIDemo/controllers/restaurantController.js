@@ -6,10 +6,7 @@ module.exports.store =function(req, res) {
 
     var restaurant = new Restaurant();      // create a new instance of the restaurant model
     restaurant.name = req.body.name;  // set the restaurants name (comes from the request)
-
-
-    // save the restaurant and check for errors
-    Restaurant.save(function(err) {
+    restaurant.save(function(err) {
         if (err)
             res.send(err);
 
@@ -30,6 +27,7 @@ module.exports.index = function(req, res) {
 
 module.exports.show = function(req, res) {
     Restaurant.findById(req.params._id, function(err, restaurant) {
+
         if (err)
             res.send(err);
         res.json(restaurant);
@@ -44,10 +42,10 @@ module.exports.update = function(req, res) {
         if (err)
             res.send(err);
 
-        Restaurant.name = req.body.name;  // update the restaurants info
+        restaurant.name = req.body.name;  // update the restaurants info
 
         // save the restaurant
-        Restaurant.save(function(err) {
+        restaurant.save(function(err) {
             if (err)
                 res.send(err);
 
