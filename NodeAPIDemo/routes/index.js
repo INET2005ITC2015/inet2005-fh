@@ -17,23 +17,23 @@ router.get('/', function(req, res) {
 // more routes for our API will happen here
 // on routes that end in /restaurants
 // ----------------------------------------------------
-router.route('/Restaurants')
+router.route('/restaurants')
 
     // create a Restaurant (accessed at POST http://localhost:3000/api/Restaurants)
     .post(restaurantController.store)
-    .get(restaurantController.index)
-    .get(restaurantController.show)
+    .get(restaurantController.index);
+
+
+
+// ----------------------------------------------------
+router.route('/restaurants/_id')
+
+.get(restaurantController.show)
 // update the Restaurant with this id (accessed at PUT http://localhost:8080/api/Restaurants/:Restaurant_id)
     .put(restaurantController.update)
 // delete the Restaurant with this id (accessed at DELETE http://localhost:8080/api/Restaurants/:Restaurant_id)
     .delete(restaurantController.destroy);
 
-
-
-// ----------------------------------------------------
-router.route('/restaurants/:restaurant_id')
-
-    // get the Restaurant with that id (accessed at GET http://localhost:8080/api/Restaurants/:Restaurant_id)
 
 
 module.exports = router;

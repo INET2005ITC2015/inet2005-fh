@@ -2,65 +2,65 @@ var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost/test/restaurants'); // connect to our database
 var Restaurant = require('../models/Restaurant');
 
-module.exposts.store =function(req, res) {
+module.exports.store =function(req, res) {
 
-    var Restaurant = new Restaurant();      // create a new instance of the Restaurant model
-    Restaurant.name = req.body.name;  // set the Restaurants name (comes from the request)
+    var restaurant = new Restaurant();      // create a new instance of the restaurant model
+    restaurant.name = req.body.name;  // set the restaurants name (comes from the request)
 
 
-    // save the Restaurant and check for errors
+    // save the restaurant and check for errors
     Restaurant.save(function(err) {
         if (err)
             res.send(err);
 
-        res.json({ message: 'Restaurant created!' });
+        res.json({ message: 'restaurant created!' });
     });
 
 };
 
-module.exposts.index = function(req, res) {
-    Restaurant.find(function (err, Restaurants) {
+module.exports.index = function(req, res) {
+    Restaurant.find(function (err, restaurants) {
         if (err)
             res.send(err);
 
-        res.json(Restaurants);
+        res.json(restaurants);
     });
 
 };
 
-module.exposts.show = function(req, res) {
-    Restaurant.findById(req.params.Restaurant_id, function(err, Restaurant) {
+module.exports.show = function(req, res) {
+    Restaurant.findById(req.params._id, function(err, restaurant) {
         if (err)
             res.send(err);
-        res.json(Restaurant);
+        res.json(restaurant);
     });
 };
 
-module.exposts.update = function(req, res) {
+module.exports.update = function(req, res) {
 
-    // use our Restaurant model to find the Restaurant we want
-    Restaurant.findById(req.params.Restaurant_id, function(err, Restaurant) {
+    // use our restaurant model to find the restaurant we want
+    Restaurant.findById(req.params._id, function(err, restaurant) {
 
         if (err)
             res.send(err);
 
-        Restaurant.name = req.body.name;  // update the Restaurants info
+        Restaurant.name = req.body.name;  // update the restaurants info
 
-        // save the Restaurant
+        // save the restaurant
         Restaurant.save(function(err) {
             if (err)
                 res.send(err);
 
-            res.json({ message: 'Restaurant updated!' });
+            res.json({ message: 'restaurant updated!' });
         });
 
     });
 };
 
-module.exposts.destroy = function(req, res) {
+module.exports.destroy = function(req, res) {
     Restaurant.remove({
-        _id: req.params.Restaurant_id
-    }, function(err, Restaurant) {
+        _id: req.params._id
+    }, function(err, restaurant) {
         if (err)
             res.send(err);
 
