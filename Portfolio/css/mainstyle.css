@@ -85,6 +85,8 @@ nav a {
 
 #quote {
     font-style: italic;
+    max-width: 50%;
+    margin-left: 25%;
 
 }
 
@@ -98,6 +100,16 @@ nav a {
 
 #AboutMe {
     background-color: #F3F4F5;
+    float: left;
+    width:100%;
+
+}
+
+.featuredIn {
+    background-color: #F3F4F5;
+    height: 100%;
+    float: left;
+    width: 100%;
 
 }
 
@@ -108,11 +120,14 @@ nav a {
 
 .logo {
     max-height: 85px;
-   max-width:350px;
+   /*max-width:350px;*/
     float: left;
     clear: both;
-
+    background-color: #F3F4F5;
+    padding-bottom:5%;
+    padding-right: 20%;
 }
+
 
 footer {
     background-color: #E3E5E7;
@@ -170,7 +185,6 @@ footer {
     float:left;
     min-width: 105px;
     width: 45%;
-    margin: 2.5%;
     background-color: #f5f5f5;
     color:#bdc3c7;
 }
