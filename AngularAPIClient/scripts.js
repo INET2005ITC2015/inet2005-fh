@@ -2,7 +2,7 @@
     var app = angular.module('App', ['ngResource']);
 
     app.factory("Restaurant", function ($resource) {
-        return $resource('http://localhost:3000/api/resturants/:_id', null,{
+        return $resource( "http://localhost:3000/api/restaurants/:_id", null,{
         'update': { method:'PUT'}, 'query':  {method:'GET', isArray:true}
         });
     });
