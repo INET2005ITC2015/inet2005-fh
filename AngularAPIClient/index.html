@@ -30,7 +30,7 @@
     <form ng-submit="addRestaurant()">
         <div class="form-group">
 
-            <h3>About:</h3>
+            <h2>About:</h2>
 
             <label for="restaurantID">Restaurant ID</label>
             <input type="text" class="form-control" id="restaurantID" placeholder="Restaurant ID" ng-model="newRestaurantID">
@@ -44,7 +44,7 @@
             <label for="borough">Borough</label>
             <input type="text" class="form-control" id="borough" placeholder="Borough" ng-model="newBorough">
 
-            <h3>Address:</h3>
+            <h2>Address:</h2>
 
             <label for="building">Building</label>
             <input type="text" class="form-control" id="building" placeholder="Building #" ng-model="newBuilding">
@@ -55,7 +55,7 @@
             <label for="zipcode">Zipcode</label>
             <input type="text" class="form-control" id="zipcode" placeholder="Zipcode" ng-model="newZipCode">
 
-            <h3>Grade:</h3>
+            <h2>Grades:</h2>
 
             <label for="date">Date</label>
             <input type="date" class="form-control" id="date" placeholder="Date" ng-model="newDate">
@@ -73,13 +73,15 @@
     <button ng-click="refreshRestaurants()">Refresh Table</button>
     <table class="table table-bordered">
         <thead>
-        <th>Restaurant ID</th>
+        <tr>
+       <th>Restaurant ID</th>
         <th>Name</th>
         <th>Cuisine</th>
         <th>Borough</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>info</th>
+        <th>save</th>
+        <th>Delete</th>
+        </tr>
         </thead>
         <tbody>
         <tr ng-repeat="restaurant in restaurants">
