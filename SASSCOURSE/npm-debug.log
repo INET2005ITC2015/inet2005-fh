@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/nvm/versions/node/v0.12.4/bin/node',
+1 verbose cli   '/usr/local/nvm/versions/node/v0.12.4/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'gulp-sass',
+1 verbose cli   '-g' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /usr/local/nvm/versions/node/v0.12.4/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/nvm/versions/node/v0.12.4/lib/package.json
+6 silly cache add args [ 'gulp-sass', null ]
+7 verbose cache add spec gulp-sass
+8 silly cache add parsed spec { raw: 'gulp-sass',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'gulp-sass',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed gulp-sass@*
+10 verbose addNamed "*" is a valid semver range for gulp-sass
+11 silly addNameRange { name: 'gulp-sass', range: '*', hasData: false }
+12 silly mapToRegistry name gulp-sass
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/gulp-sass
+16 verbose addNameRange registry:https://registry.npmjs.org/gulp-sass not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/gulp-sass
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 7:48:16 PM
+20 verbose request id 2dd34ffbb8329894
+21 verbose etag "768SG6JTJSDGXIPH43C7KY172"
+22 http request GET https://registry.npmjs.org/gulp-sass
+23 http 304 https://registry.npmjs.org/gulp-sass
+24 silly get cb [ 304,
+24 silly get   { date: 'Thu, 07 Apr 2016 22:18:16 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     'cache-control': 'max-age=300',
+24 silly get     etag: '"768SG6JTJSDGXIPH43C7KY172"',
+24 silly get     age: '8',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-ord1736-ORD',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '1',
+24 silly get     'x-timer': 'S1460067496.583704,VS0,VE0',
+24 silly get     vary: 'Accept-Encoding' } ]
+25 verbose etag https://registry.npmjs.org/gulp-sass from cache
+26 verbose get saving gulp-sass to /home/inet2005/.npm/registry.npmjs.org/gulp-sass/.cache.json
+27 silly addNameRange number 2 { name: 'gulp-sass', range: '*', hasData: true }
+28 silly addNameRange versions [ 'gulp-sass',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '0.2.3',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.4.1',
+28 silly addNameRange     '0.5.0',
+28 silly addNameRange     '0.5.1',
+28 silly addNameRange     '0.5.2',
+28 silly addNameRange     '0.6.0',
+28 silly addNameRange     '0.7.0',
+28 silly addNameRange     '0.7.1',
+28 silly addNameRange     '0.7.2',
+28 silly addNameRange     '0.7.3',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '1.2.1',
+28 silly addNameRange     '1.2.2',
+28 silly addNameRange     '1.2.3',
+28 silly addNameRange     '1.2.4',
+28 silly addNameRange     '1.3.0',
+28 silly addNameRange     '1.3.1',
+28 silly addNameRange     '1.3.2',
+28 silly addNameRange     '1.3.3',
+28 silly addNameRange     '2.0.0-alpha.1',
+28 silly addNameRange     '2.0.0',
+28 silly addNameRange     '2.0.2',
+28 silly addNameRange     '2.0.3',
+28 silly addNameRange     '2.0.4',
+28 silly addNameRange     '2.1.0-beta',
+28 silly addNameRange     '2.1.0',
+28 silly addNameRange     '2.1.1',
+28 silly addNameRange     '2.2.0',
+28 silly addNameRange     '2.3.0-beta.1' ] ]
+29 silly addNamed gulp-sass@2.2.0
+30 verbose addNamed "2.2.0" is a plain semver version for gulp-sass
+31 silly cache afterAdd gulp-sass@2.2.0
+32 verbose afterAdd /home/inet2005/.npm/gulp-sass/2.2.0/package/package.json not in flight; writing
+33 verbose afterAdd /home/inet2005/.npm/gulp-sass/2.2.0/package/package.json written
+34 silly install resolved [ { name: 'gulp-sass',
+34 silly install resolved     version: '2.2.0',
+34 silly install resolved     description: 'Gulp plugin for sass',
+34 silly install resolved     main: 'index.js',
+34 silly install resolved     scripts: { test: 'mocha test' },
+34 silly install resolved     repository: { type: 'git', url: 'git://github.com/dlmanning/gulp-sass.git' },
+34 silly install resolved     keywords: [ 'gulpplugin', 'sass', 'gulp' ],
+34 silly install resolved     author: { name: 'David Manning' },
+34 silly install resolved     license: 'MIT',
+34 silly install resolved     bugs: { url: 'https://github.com/dlmanning/gulp-sass/issues' },
+34 silly install resolved     dependencies:
+34 silly install resolved      { 'gulp-util': '^3.0',
+34 silly install resolved        'node-sass': '^3.4.1',
+34 silly install resolved        'object-assign': '^4.0.1',
+34 silly install resolved        through2: '^2.0.0',
+34 silly install resolved        'vinyl-sourcemaps-apply': '^0.2.0' },
+34 silly install resolved     devDependencies:
+34 silly install resolved      { 'autoprefixer-core': '^5.2.1',
+34 silly install resolved        eslint: '^1.6.0',
+34 silly install resolved        globule: '^0.2.0',
+34 silly install resolved        gulp: '^3.8.11',
+34 silly install resolved        'gulp-postcss': '^5.1.10',
+34 silly install resolved        'gulp-sourcemaps': '^1.5.2',
+34 silly install resolved        'gulp-tap': '^0.1.3',
+34 silly install resolved        mocha: '^2.2.1',
+34 silly install resolved        rimraf: '^2.4.3',
+34 silly install resolved        should: '^7.1.0' },
+34 silly install resolved     gitHead: '1888f3561f7db25c016dbc17ace4fcfd4456e940',
+34 silly install resolved     homepage: 'https://github.com/dlmanning/gulp-sass#readme',
+34 silly install resolved     _id: 'gulp-sass@2.2.0',
+34 silly install resolved     _shasum: 'ac7fb33112443ee4fd2df7468ed966a14a72476f',
+34 silly install resolved     _from: 'gulp-sass@*',
+34 silly install resolved     _npmVersion: '2.13.2',
+34 silly install resolved     _nodeVersion: '2.5.0',
+34 silly install resolved     _npmUser: { name: 'xzyfer', email: 'xzyfer@gmail.com' },
+34 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: 'ac7fb33112443ee4fd2df7468ed966a14a72476f',
+34 silly install resolved        tarball: 'https://registry.npmjs.org/gulp-sass/-/gulp-sass-2.2.0.tgz' },
+34 silly install resolved     _npmOperationalInternal:
+34 silly install resolved      { host: 'packages-5-east.internal.npmjs.com',
+34 silly install resolved        tmp: 'tmp/gulp-sass-2.2.0.tgz_1454585742634_0.3176706349477172' },
+34 silly install resolved     directories: {},
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-sass/-/gulp-sass-2.2.0.tgz',
+34 silly install resolved     readme: 'ERROR: No README data found!' } ]
+35 info install gulp-sass@2.2.0 into /usr/local/nvm/versions/node/v0.12.4/lib
+36 info installOne gulp-sass@2.2.0
+37 verbose installOne of gulp-sass to /usr/local/nvm/versions/node/v0.12.4/lib not in flight; installing
+38 verbose lock using /home/inet2005/.npm/_locks/gulp-sass-58f36f72a8ae2614.lock for /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+39 silly install write writing gulp-sass 2.2.0 to /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+40 verbose unbuild lib/node_modules/gulp-sass
+41 silly gentlyRm /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass is being purged from base /usr/local/nvm/versions/node/v0.12.4
+42 verbose gentlyRm don't care about contents; nuking /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+43 verbose tar unpack /home/inet2005/.npm/gulp-sass/2.2.0/package.tgz
+44 verbose tar unpacking to /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+45 silly gentlyRm /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass is being purged
+46 verbose gentlyRm don't care about contents; nuking /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+47 silly gunzTarPerm modes [ '775', '664' ]
+48 error tar.unpack untar error /home/inet2005/.npm/gulp-sass/2.2.0/package.tgz
+49 verbose unlock done using /home/inet2005/.npm/_locks/gulp-sass-58f36f72a8ae2614.lock for /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+50 verbose fstream_path /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+51 verbose fstream_type Directory
+52 verbose fstream_class DirWriter
+53 verbose stack Error: EACCES, mkdir '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass'
+53 verbose stack     at Error (native)
+54 verbose fstream_stack /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+54 verbose fstream_stack /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+54 verbose fstream_stack FSReqWrap.oncomplete (fs.js:95:15)
+55 verbose cwd /home/inet2005/code/php/inet2005-fh/SASSCOURSE
+56 error Linux 3.10.0-327.13.1.el7.x86_64
+57 error argv "/usr/local/nvm/versions/node/v0.12.4/bin/node" "/usr/local/nvm/versions/node/v0.12.4/bin/npm" "install" "gulp-sass" "-g"
+58 error node v0.12.4
+59 error npm  v2.10.1
+60 error path /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
+61 error code EACCES
+62 error errno -13
+63 error Error: EACCES, mkdir '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass'
+63 error     at Error (native)
+63 error  { [Error: EACCES, mkdir '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass']
+63 error   errno: -13,
+63 error   code: 'EACCES',
+63 error   path: '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass',
+63 error   fstream_type: 'Directory',
+63 error   fstream_path: '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass',
+63 error   fstream_class: 'DirWriter',
+63 error   fstream_stack:
+63 error    [ '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+63 error      '/usr/local/nvm/versions/node/v0.12.4/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+63 error      'FSReqWrap.oncomplete (fs.js:95:15)' ] }
+64 error Please try running this command again as root/Administrator.
+65 verbose exit [ -13, true ]
+66 verbose unbuild lib/node_modules/gulp-sass
+67 silly gentlyRm /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass is being purged from base /usr/local/nvm/versions/node/v0.12.4
+68 verbose gentlyRm don't care about contents; nuking /usr/local/nvm/versions/node/v0.12.4/lib/node_modules/gulp-sass
