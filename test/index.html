@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/mycss.css">
+    <title>Demo Day 1</title>
+</head>
+<body>
+
+<div id="one">
+<h1>Article 1</h1>
+
+<p>Lorem ipsum dolor sit amet, alterum fabulas suavitate eu est, viris splendide vim ex, an sit inermis nostrum. Homero pericula sapientem nam te, duo inermis scaevola oporteat at, vis in omnesque intellegat. Option volutpat sea no, quodsi accusata vel id. No iisque postulant mei. Has aperiam epicuri no, mea semper deleniti honestatis ei. Ex pri mazim delicatissimi, qui te causae senserit repudiandae, sed adipiscing temporibus ei. Tale quaestio reprimique mel ex.</p>
+
+<p>Mel cu idque aliquid. Vim purto omnesque indoctum eu. Iisque recusabo est at, imperdiet persequeris mel no. Vis viris delicata comprehensam an.</p>
+</div>
+<div id="two">
+<h1>Article 2</h1>
+
+<p>Lorem ipsum dolor sit amet, prima fuisset aliquando sea cu, mel animal delenit eloquentiam in. Magna phaedrum aliquando vel ut, ne ridens impedit corrumpit nec. Ut nec harum choro invidunt, nibh blandit te sit, no eum oratio philosophia. Id quas platonem sit, ad feugait vulputate mea. Mei no tritani constituto, at pro praesent appellantur consequuntur. Nec te aeterno delectus periculis, sed te quem brute legere.</p>
+
+<p>Mel cu idque aliquid. Vim purto omnesque indoctum eu. Iisque recusabo est at, imperdiet persequeris mel no. Vis viris delicata comprehensam an.</p>
+</div>
+<div id="three">
+<h1>Article 3</h1>
+
+<p>Usu in omnes eripuit, qui at feugait similique disputando. Usu brute audiam molestiae et. Movet qualisque te quo, est ea verterem voluptaria. Simul maluisset vim at.</p>
+
+<p>Usu in omnes eripuit, qui at feugait similique disputando. Usu brute audiam molestiae et. Movet qualisque te quo, est ea verterem voluptaria. Simul maluisset vim at.</p>
+    </div>
+
+<button onclick="myFunction()">Color Modify</button>
+
+<script>
+    function myFunction() {
+        var selection = prompt("Please Enter Your Selection","");
+
+        if(selection == "1"){
+        document.getElementById("one").style.color = "#000";
+            document.getElementById("two").style.color = "#fff";
+            document.getElementById("three").style.color = "#fff";
+        }
+        else if(selection == "2"){
+            document.getElementById("one").style.color = "#fff";
+            document.getElementById("two").style.color = "#000";
+            document.getElementById("three").style.color = "#fff";
+        }
+        else if(selection == "3"){
+            document.getElementById("one").style.color = "#fff";
+            document.getElementById("two").style.color = "#fff";
+            document.getElementById("three").style.color = "#000";
+        }
+        //take out extra to get just white could also make this more efficient and maybe put checks for if color is x to allow for switch back
+
+    }
+</script>
+</body>
+</html>

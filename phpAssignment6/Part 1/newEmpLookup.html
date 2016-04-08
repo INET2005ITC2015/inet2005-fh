@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Lookup</title>
+        <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="ajaxEmpLookup.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.tooltip').tooltipster();
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Employee Lookup</h2>
+        <form action="" name="searchForm">
+            <p>Search:
+            <input class="tooltip" title="Enter the Name of the employee you are looking for" type="text" name="searchExpr" onkeyup="showMatches(this.value)">
+            </p>
+            <br/><br/><br/><br/>
+            <p>Suggestions:<br/>
+            <span class="tooltip" title="Your Current Results" id="TxtHint"></span>
+            </p>
+        </form>
+    </body>
+</html>

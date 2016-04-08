@@ -1,0 +1,26 @@
+{
+  "name": "SpecialTopicsLab2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/INET2005ITC2015/inet2005-fh",
+  "authors": [
+    "findlayhi <w0269118@nscc.ca>"
+  ],
+  "description": "angular student app",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "student",
+    "object"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

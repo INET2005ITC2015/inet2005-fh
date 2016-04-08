@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form id="myform" name="myform" action="insertEmp.php" method ="POST">
+
+    <label>First Name: <input type="text" name="fName" id="fName"></label></br></br>
+    <label>Last Name: <input type="text" name="lName" id="lName"></label></br></br>
+    <label>Birth Date (YYYY-MM-DD): <input type="text" name="DOB" id="DOB"></label></br></br>
+    <label>Hire Date (YYYY-MM-DD): <input type="text" name="hireDate" id="hireDate"></label></br></br>
+    <label class="input">Gender: </label>
+    <input id="male" name="gender" type="radio" value="M" >
+    <label for="male">Male</label>
+    <input id="female" name="gender" type="radio" value="F" checked>
+    <label for="female">Female</label><br/></br>
+    <input type="submit" value="Insert New Employee" id="Sub"></br></br>
+</form>
+<a href="MainPage.php">Back</a>
+<a href ="logOut.php">Logout</a>
+<script src="styles.js"></script>
+</body>
+</html>

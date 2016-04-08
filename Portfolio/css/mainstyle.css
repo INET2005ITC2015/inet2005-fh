@@ -1,0 +1,313 @@
+/*dot is class # is id*/
+
+header {
+    background-color: #A5ADB0;
+    min-height: 33.333%;
+    float: left;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.smartass1, .smartass2 {
+    float: right;
+    margin-top: -10%;
+    margin-right: 5%;
+    z-index: 1;
+
+}
+
+.smartass1 {
+    font-size: 3vw;
+
+}
+
+.smartass2 {
+    margin-top: -6%;
+    font-size: 2.5vw;
+
+}
+
+#menu {
+    display: none;
+}
+
+#name a {
+    float: left;
+    color: white;
+    text-decoration: none;
+    padding-left: 3%;
+}
+
+a {
+    float: left;
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+hr {
+    color: #CAD2D7;
+    width: 90%;
+    text-align: center;
+
+}
+
+h1 {
+    /*make this arial*/
+    color: white;
+    font-size: 48pt;
+
+}
+
+h2 {
+    color: black;
+    font-size: 28pt;
+    margin-top: 0;
+
+}
+
+h3 {
+    font-size: 18pt;
+
+}
+
+h4 {
+    /*make this arial*/
+    color: #fff;
+    font-size: 26pt;
+}
+
+nav {
+    float: right;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+}
+
+nav li {
+
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 10px;
+    padding: 0;
+}
+
+nav a {
+    font-size: 16pt;
+    padding: 15px 10px;
+    color: #FFC000;
+}
+/**********************************************************************************************************************/
+/*about me*/
+/**********************************************************************************************************************/
+#quote {
+    font-style: italic;
+    max-width: 50%;
+    margin-left: 25%;
+    text-align: center;
+
+}
+
+#intro {
+    display: block;
+}
+
+.center {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+#AboutMe {
+    background-color: #F3F4F5;
+    float: left;
+    width: 100%;
+
+}
+
+#main {
+    max-height: 700px;
+    min-width: 100%;
+    min-height: 33.33%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    float: left;
+    clear: both;
+}
+
+.featuredIn {
+    background-color: #F3F4F5;
+    height: 100%;
+    float: left;
+    clear: both;
+    width: 100%;
+    padding-left:2%;
+    padding-bottom: 2%;
+    display: inline-block;
+
+
+}
+
+.logo {
+    max-height: 85px;
+    max-width:70%;
+    min-width: 70%;
+    background-color: #F3F4F5;
+    padding-right:20%;
+    height: auto;
+    width: auto;
+
+
+}
+
+#myWork a {
+    color: black;
+
+}
+
+#myWork {
+    float: left;
+    min-width: 100%;
+
+}
+
+
+#aboutMe {
+        min-width: 100%;
+    min-height: 33.333%;
+}
+
+#ContentBlock {
+    margin-right: 3%;
+    margin-left: 5%;
+    width:100%;
+
+}
+
+.content{float:left;
+        max-width:25%;
+        padding-right: 5%;
+
+}
+/**********************************************************************************************************************/
+/*My Work*/
+/**********************************************************************************************************************/
+
+#examples {
+    list-style: none;
+    padding-left:5%;
+}
+
+#examples img {
+    min-width: 105px;
+    padding-right: 15%;
+
+}
+#examples img ul li a {
+    float:left;
+
+}
+
+footer {
+    background-color: #E3E5E7;
+    float: left;
+    clear: both;
+    min-width: 100%;
+
+}
+
+#socialLinks {
+    min-width: 12.5%;
+    float: right;
+
+}
+
+#socialLinks a {
+    font-family: iconsFont, sans-serif;
+    color: black;
+    font-size: 40pt;
+
+}
+
+#socialLinks a:hover {
+    color: #FFC000;
+
+}
+
+.social {
+    min-width: 50%;
+}
+
+#copy {
+    float: left;
+    clear: both;
+    color: #000;
+    margin-left: 5%;
+
+}
+
+
+
+/******************************************************************************************************************/
+/*fonts************************************************************************************************************/
+/******************************************************************************************************************/
+
+@font-face {
+    font-family: iconsFont;
+    src: url('../font/Socialico.otf') format('opentype');
+    src: url('../font/Socialico.ttf') format('truetype');
+}
+
+/******************************************************************************************************************/
+/*begin media queries*/
+/******************************************************************************************************************/
+
+@media screen and (max-width: 481px) {
+    aside {
+        display: none
+    }
+
+    #menu {
+        display: block;
+        text-align: center;
+    }
+
+    .menu a {
+        text-align: center;
+        float: none;
+
+    }
+
+    .menu li {
+        text-align: center;
+        float: none;
+
+    }
+
+    nav a {
+        color: #ffffff;
+    }
+
+    hr {
+        display: none;
+    }
+
+    /*.ContentBlock {*/
+    /*max-width:100%;*/
+    /*}*/
+    #intro {
+        display: none;
+    }
+}
+
+/*480 and 320 */

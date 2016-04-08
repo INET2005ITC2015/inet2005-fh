@@ -1,0 +1,16 @@
+html {background: darkblue;
+    color:white;
+}
+
+#one {
+    float: left;
+    width:25%;
+}
+#two {
+    float: left;
+    width: 25%;
+}
+#three{
+    float: left;
+    width: 25%;
+}

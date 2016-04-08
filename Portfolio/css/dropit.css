@@ -1,0 +1,43 @@
+/*
+ * Dropit v1.1.0
+ * http://dev7studios.com/dropit
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* These styles assume you are using ul and li */
+.dropit {
+    list-style: none;
+	padding: 0;
+    background-color: #FFC000;
+    width: 30%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    float: left;
+
+
+}
+
+.dropit a{
+    color: #fff;
+}
+.dropit .dropit-trigger {  }
+.dropit .dropit-submenu {
+    top: 100%;
+    left: 0; /* dropdown left or right */
+    display: none;
+    list-style: none;
+	padding-bottom: 5px;
+    background-color: #FFC000;
+    padding-left: 0;
+
+
+}
+.dropit .dropit-open .dropit-submenu { display: block; }
+
+

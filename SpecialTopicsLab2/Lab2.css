@@ -1,6 +1,6 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -26,13 +26,18 @@ form label, input {
     padding: 5px;
 }
 
-#tooltip {
+#popper {
     position: absolute;
-    top: 200px;
+    top: 100px;
     left: 200px;
     z-index: 1;
-    visibility: hidden;    
+
     border: 1px solid black;
     padding: 10px;
     background-color: greenyellow;
+}
+
+.myGrid {
+    width: 500px;
+    height: 250px;
 }
